@@ -1,3 +1,16 @@
+#Procedimiento para elegir la opcion con la que se jugara
+def elegir_opcion():
+  accion_usuario = input("Ingresa una opción: (piedra, papel, tijera):")
+  accion_computadora=eleccion_computadora()
+  comparacion_resultados(accion_usuario,accion_computadora)
+
+
+import random
+
+#Funcion (ya que esta si retorna algo) para saber la opcion del computador
+def eleccion_computadora():
+  accion_computadora = random.choice(acciones_posibles)
+  return accion_computadora
 #Procedimiento para saber el ganador
 def ganador(accion_usuario,accion_computadora):
   
@@ -72,25 +85,6 @@ def cleaning():
         os.system('clear')
     elif sys.platform.startswith('linux'):
         os.system('clear')
-
-     
-#Procedimiento para comparar ambas opciones
-def comparacion_resultados(accion_usuario,accion_computadora):
-  print("")
-  print("Resultados")
-  print("")
-  print(f"Tu escogiste {accion_usuario}, la computadora eligio {accion_computadora}.\n")
-  ganador(accion_usuario,accion_computadora)
-
-
-
-#Procedimiento para preguntarle el nombre al usuario
-def preguntar_nombre():
-  print("")
-  nombre = input("Primero ingresa tu nombre: ")
-  cleaning()
-  print("")
-  print(f"Hola {nombre}!, bienvenido al juego de piedra, papel o tijera \n")    
 
 
 #Aqui empieza todo
